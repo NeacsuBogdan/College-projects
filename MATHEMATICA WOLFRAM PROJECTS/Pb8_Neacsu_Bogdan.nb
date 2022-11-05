@@ -1,0 +1,469 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19181,        461]
+NotebookOptionsPosition[     18251,        438]
+NotebookOutlinePosition[     18594,        453]
+CellTagsIndexPosition[     18551,        450]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"shift", " ", "+", 
+     RowBox[{"enter", " ", "to", " ", "run"}]}], " ", ";"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"<<", "Descarta2D`"}]}]], "Input",
+ CellChangeTimes->{{3.8590083633716984`*^9, 3.859008367935773*^9}, {
+  3.8766620650716667`*^9, 
+  3.876662090164556*^9}},ExpressionUUID->"5abe329f-a46a-4381-a9df-\
+ec7f3d21865c"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"x", ",", "y", ",", "c", ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8590083721501207`*^9, 3.8590083779235835`*^9}, {
+  3.8590090851009884`*^9, 3.859009147622691*^9}, {3.8590092845587673`*^9, 
+  3.859009285514563*^9}, {3.85901330504639*^9, 3.8590133053432465`*^9}, {
+  3.8590173777124624`*^9, 3.8590174101789246`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"7199449b-4535-4026-8930-3853e8bca3ca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", " ", 
+   RowBox[{"Input", "[", 
+    RowBox[{
+    "StringJoin", "[", " ", 
+     "\"\<Alegeti 0 pentru cazul general sau orice alta valoare pentru a seta \
+coordonate arbitrare.\>\"", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"(", 
+  RowBox[{
+   RowBox[{"Label", "[", "begin", "]"}], ";", "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"1.", " ", "Alegem", " ", "3", " ", "puncte", " ", 
+      RowBox[{"arbitrare", " ", ":", "\[IndentingNewLine]", 
+       RowBox[{"A", 
+        RowBox[{"(", 
+         RowBox[{"x", ",", "y"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "  ", 
+     RowBox[{"B", 
+      RowBox[{"(", 
+       RowBox[{"0", ",", "0"}], ")"}]}], ";", "\[IndentingNewLine]", "  ", 
+     RowBox[{"C", 
+      RowBox[{"(", 
+       RowBox[{"c", ",", "0"}], ")"}]}], ";"}], "\[IndentingNewLine]", "*)"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"pA", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "y"}], "}"}], "]"}]}], ";", "\n", 
+   RowBox[{"pB", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", "0"}], "}"}], "]"}]}], ";", "\n", 
+   RowBox[{"pC", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", " ", "0"}], "}"}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "2.", " ", "Trasam", " ", "segmentele", " ", "delimitate", " ", "de", 
+      " ", "cele", " ", "trei", " ", "puncte", " ", "si", " ", 
+      RowBox[{"anume", " ", ":", " ", "AB"}]}], ",", "AC", ",", 
+     RowBox[{
+     "BC", "\[IndentingNewLine]", "Pentru", " ", "a", " ", "forma", " ", "un",
+       " ", 
+      RowBox[{"triunghiu", "."}]}]}], " ", "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"AB", "=", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pA", ",", "pB"}], "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"AC", "=", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pA", ",", "pC"}], "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"BC", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pB", ",", "pC"}], "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+    "3.", " ", "Pentru", " ", "a", " ", "determina", " ", "proiectia", " ", 
+     "lui", " ", "A", " ", "pe", " ", "BC", " ", 
+     RowBox[{"(", 
+      RowBox[{"punctul", " ", "A1"}], ")"}], " ", "trasam", " ", 
+     "perpendiculara", " ", "din", " ", "A", " ", "pe", " ", "BC", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"reprezentand", " ", "chiar", " ", "inaltimea"}], ")"}], 
+      "."}]}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"AA1", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pA", ",", 
+      RowBox[{"Line2D", "[", "BC", "]"}], ",", "Perpendicular2D"}], "]"}]}], 
+   ";", "\[IndentingNewLine]", 
+   RowBox[{"pA1", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{
+      RowBox[{"Line2D", "[", "BC", "]"}], ",", "AA1"}], "]"}]}], " ", ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"AA1", " ", "=", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pA", ",", "pA1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"4", "'"}], "\[IndentingNewLine]", "a"}], ")"}], " ", "Trasam",
+      " ", "proiectile", " ", 
+     RowBox[{"(", "perpendicularele", ")"}], " ", "lui", " ", "A1", " ", "pe",
+      " ", "AB", " ", "respectiv", " ", "pe", " ", "AC", " ", "in", " ", 
+     "punctele", " ", "A2", " ", "si", " ", 
+     RowBox[{"A3", "."}]}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"A1A2", " ", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pA1", ",", 
+      RowBox[{"Line2D", "[", "AB", "]"}], ",", "Perpendicular2D"}], "]"}]}], 
+   ";", "\[IndentingNewLine]", 
+   RowBox[{"pA2", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"A1A2", ",", 
+      RowBox[{"Line2D", "[", "AB", "]"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"A1A2", " ", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pA1", ",", "pA2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"A1A3", " ", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pA1", ",", 
+      RowBox[{"Line2D", "[", "AC", "]"}], ",", "Perpendicular2D"}], "]"}]}], 
+   ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"pA3", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"A1A3", ",", 
+      RowBox[{"Line2D", "[", "AC", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"A1A3", " ", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pA1", ",", "pA3"}], "]"}]}], ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{" ", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"4", "''"}], ".", "\[IndentingNewLine]", "a"}], ")"}], " ", 
+     "Trasam", " ", "proiectia", " ", "lui", " ", "B", " ", "pe", " ", "AC", 
+     " ", "in", " ", "punctul", " ", "B2", " ", 
+     RowBox[{"(", 
+      RowBox[{"a", " ", "doua", " ", "inaltime"}], ")"}], " ", "si", " ", 
+     "proiectile", " ", "punctului", " ", "rezultat", " ", "pe", " ", "BC", 
+     " ", "respectiv", " ", "pe", " ", 
+     RowBox[{"AB", "."}]}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"BB1", "=", " ", 
+    RowBox[{"Line2D", " ", "[", 
+     RowBox[{"pB", " ", ",", " ", 
+      RowBox[{"Line2D", "[", "AC", "]"}], ",", "Perpendicular2D"}], "]"}]}], 
+   " ", ";", "\[IndentingNewLine]", 
+   RowBox[{"pB1", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"BB1", ",", 
+      RowBox[{"Line2D", "[", "AC", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"BB1", " ", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pB", ",", "pB1"}], "]"}]}], " ", ";", "\[IndentingNewLine]", 
+   RowBox[{"B1B2", " ", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pB1", " ", ",", " ", 
+      RowBox[{"Line2D", "[", "AB", "]"}], ",", "Perpendicular2D"}], "]"}]}], 
+   ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"pB2", " ", "=", " ", 
+    RowBox[{"Point2D", " ", "[", 
+     RowBox[{"B1B2", " ", ",", " ", 
+      RowBox[{"Line2D", "[", "AB", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"B1B2", " ", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pB1", ",", "pB2"}], "]"}]}], ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"B1B3", " ", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pB1", ",", 
+      RowBox[{"Line2D", "[", "BC", "]"}]}], "]"}]}], " ", ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"pB3", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"B1B3", ",", 
+      RowBox[{"Line2D", "[", "BC", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"B1B3", " ", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pB1", ",", "pB3"}], "]"}]}], ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"\[IndentingNewLine]", "b", ")"}], " ", "Trasam", " ", 
+     "proiectia", " ", "lui", " ", "C", " ", "pe", " ", "AB", " ", "in", " ", 
+     "punctul", " ", "C2", " ", 
+     RowBox[{"(", 
+      RowBox[{"a", " ", "treia", " ", "inaltime"}], ")"}], " ", "si", " ", 
+     "proiectile", " ", "punctului", " ", "rezultat", " ", "pe", " ", "AC", 
+     " ", "respectiv", " ", "pe", " ", 
+     RowBox[{"BC", "."}]}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"CC1", " ", "=", " ", 
+    RowBox[{"Line2D", " ", "[", 
+     RowBox[{"pC", ",", 
+      RowBox[{"Line2D", "[", "AB", "]"}], ",", "Perpendicular2D"}], "]"}]}], 
+   ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"pC1", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"CC1", ",", 
+      RowBox[{"Line2D", "[", "AB", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"CC1", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pC", ",", "pC1"}], "]"}]}], " ", ";", "\[IndentingNewLine]", 
+   RowBox[{"C1C2", " ", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pC1", ",", 
+      RowBox[{"Line2D", "[", "AC", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"pC2", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"C1C2", ",", 
+      RowBox[{"Line2D", "[", "AC", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"C1C2", "=", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pC1", ",", "pC2"}], "]"}]}], ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"C1C3", " ", "=", " ", 
+    RowBox[{"Line2D", "[", 
+     RowBox[{"pC1", ",", 
+      RowBox[{"Line2D", "[", "BC", "]"}]}], "]"}]}], " ", ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"pC3", " ", "=", " ", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{"C1C3", ",", 
+      RowBox[{"Line2D", "[", "BC", "]"}]}], "]"}]}], ";", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"C1C3", " ", "=", " ", 
+    RowBox[{"Segment2D", "[", 
+     RowBox[{"pC1", ",", "pC3"}], "]"}]}], ";", " ", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Fixam", " ", "ortocentrul", " ", "triunghiului"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"pO", "=", 
+    RowBox[{"Point2D", "[", 
+     RowBox[{
+      RowBox[{"Line2D", "[", "AA1", "]"}], ",", 
+      RowBox[{"Line2D", "[", "BB1", "]"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "5.", "\[IndentingNewLine]", "Trasam", " ", "cercul", " ", "care", " ", 
+      "trece", " ", "prin", " ", "A2"}], ",", " ", 
+     RowBox[{"B2", " ", "si", " ", 
+      RowBox[{"C2", "."}]}]}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"CircleABC2", "=", 
+    RowBox[{"Circle2D", "[", 
+     RowBox[{"pA2", ",", "pB2", ",", "pC2"}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "\[IndentingNewLine]", 
+    RowBox[{
+    "6.", "\[IndentingNewLine]", "Introducem", " ", "coordonatele", " ", 
+     "lui", " ", "A", " ", "si", " ", "coordonata", " ", "x", " ", "a", " ", 
+     "lui", " ", "C", " ", "pana", " ", "cand", " ", "punctele", " ", 
+     "rezultate", " ", "formeaza", " ", "un", " ", 
+     RowBox[{"triunghi", "."}]}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"n", "\[Equal]", "3339"}], ",", 
+     RowBox[{"Goto", "[", "end", "]"}], ",", 
+     RowBox[{"n", "=", "n"}]}], "]"}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Label", "[", "first", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"n", "\[Equal]", "0"}], ",", 
+        RowBox[{"Goto", "[", "second", "]"}], ",", 
+        RowBox[{"n", "=", "3339"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Label", "[", "start", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"x", "=", 
+         RowBox[{"Input", "[", 
+          RowBox[{
+          "StringJoin", "[", " ", "\"\<Da coordonata x a punctului A\>\"", 
+           "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"y", "=", " ", 
+         RowBox[{"Input", "[", 
+          RowBox[{
+          "StringJoin", "[", "\"\<Da coordonata y a punctului A\>\"", "]"}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"c", "=", " ", 
+         RowBox[{"Input", " ", "[", 
+          RowBox[{
+          "StringJoin", "[", "\"\<Da coordonata x a punctului C\>\"", "]"}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"dAB", " ", "=", " ", 
+         RowBox[{"Distance2D", "[", 
+          RowBox[{"pA", ",", "pB"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"dAC", " ", "=", " ", 
+         RowBox[{"Distance2D", "[", 
+          RowBox[{"pA", ",", "pC"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"dBC", "=", 
+         RowBox[{"Distance2D", "[", 
+          RowBox[{"pB", ",", "pC"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"dAB", "<", 
+            RowBox[{"dBC", "+", "dAC"}]}], "&&", 
+           RowBox[{"dBC", "<", 
+            RowBox[{"dAB", "+", "dAC"}]}], "&&", 
+           RowBox[{"dAC", "<", 
+            RowBox[{"dAB", "+", "dBC"}]}]}], ",", 
+          RowBox[{"Goto", "[", "stop", "]"}], ",", 
+          RowBox[{"Goto", "[", "start", "]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Label", "[", "stop", "]"}]}], ")"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Label", "[", "second", "]"}]}], ")"}], "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"n", "\[Equal]", "3339"}], ",", 
+      RowBox[{"Goto", "[", "begin", "]"}], ",", 
+      RowBox[{"n", "=", "n"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"Label", "[", "end", "]"}], ";"}], ")"}], "\[IndentingNewLine]", 
+ RowBox[{"Sketch2D", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "AB", ",", "BC", ",", "AC", ",", "AA1", ",", "pA", ",", "pB", ",", "pC", 
+    ",", "pA1", ",", "pA2", ",", "A1A2", ",", "pA3", ",", "A1A3", ",", "pB1", 
+    ",", "BB1", ",", "pB2", ",", "B1B2", ",", "pB3", ",", "B1B3", ",", "pC1", 
+    ",", "CC1", ",", "pC2", ",", "C1C2", ",", "pC3", ",", "C1C3", ",", 
+    "CircleABC2", ",", "pO"}], "}"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.859008387869774*^9, 3.8590084805086946`*^9}, {
+   3.859008590862158*^9, 3.8590085912414846`*^9}, {3.859008626174945*^9, 
+   3.859008735908767*^9}, {3.8590088006642237`*^9, 3.859008801228713*^9}, {
+   3.8590088407667685`*^9, 3.859008976335866*^9}, {3.8590090070980883`*^9, 
+   3.859009076489723*^9}, {3.8590091842145205`*^9, 3.8590091846536417`*^9}, {
+   3.859009322005453*^9, 3.8590094455809317`*^9}, {3.8590096302542114`*^9, 
+   3.8590096386646013`*^9}, {3.859009751243982*^9, 3.8590099047810163`*^9}, {
+   3.8590099445376415`*^9, 3.8590099453721595`*^9}, {3.8590100779940333`*^9, 
+   3.8590100886967106`*^9}, {3.859010233887856*^9, 3.8590102341732063`*^9}, {
+   3.8590102810659704`*^9, 3.8590103395889053`*^9}, {3.859012307421116*^9, 
+   3.859012369721673*^9}, {3.8590124175619984`*^9, 3.8590124627150693`*^9}, {
+   3.859012530718423*^9, 3.8590125956818933`*^9}, {3.859012625711104*^9, 
+   3.859012719698278*^9}, {3.8590127809127903`*^9, 3.8590127965522346`*^9}, 
+   3.859012840752246*^9, {3.8590130121223497`*^9, 3.8590130936098976`*^9}, {
+   3.8590131433712425`*^9, 3.859013149605178*^9}, {3.859013279532508*^9, 
+   3.859013282094828*^9}, {3.8590133475746417`*^9, 3.859013358526941*^9}, {
+   3.8590133927901497`*^9, 3.859013486776535*^9}, {3.8590135694425297`*^9, 
+   3.8590136693022785`*^9}, {3.859014412372941*^9, 3.859014872477933*^9}, {
+   3.8590149541121225`*^9, 3.859015077454181*^9}, {3.859015114857868*^9, 
+   3.859015267680915*^9}, {3.859015309943615*^9, 3.8590153256456313`*^9}, {
+   3.859015371298607*^9, 3.8590153752046404`*^9}, 3.8590154085057135`*^9, {
+   3.859015450971525*^9, 3.859015462298852*^9}, {3.8590155764776187`*^9, 
+   3.8590156487611*^9}, {3.8590156908206873`*^9, 3.8590157114285574`*^9}, {
+   3.8590157559410267`*^9, 3.859015760222048*^9}, 3.8590158166495743`*^9, {
+   3.8590173529485846`*^9, 3.859017388742937*^9}, 3.8590174206469374`*^9, 
+   3.8590174533633823`*^9, {3.85902105946912*^9, 3.8590210620997224`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"28f6e8c8-ebb8-4016-957d-177d46137639"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Sketch2D","notReal",
+   "\"<\\!\\(\\*RowBox[{\\\"25\\\"}]\\)> object(s) cannot be sketched.\"",2,
+   18,1,25352867105353897931,"Local","D2DSketch2D`Sketch2D"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.8766620996479454`*^9},
+ CellLabel->
+  "During evaluation of \
+In[16]:=",ExpressionUUID->"1c6ccd43-15a1-4446-8c2f-1c35e1906eb5"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {AbsolutePointSize[4], PointBox[{0., 0.}]},
+  AspectRatio->Automatic,
+  Axes->True,
+  Frame->True,
+  PlotRange->Automatic]], "Output",
+ CellChangeTimes->{{3.8766619554556274`*^9, 3.8766619745372543`*^9}, 
+   3.8766620287440863`*^9, 3.8766620997790422`*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"a9970292-9f27-46e5-8f65-66eeec591299"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"IsOn2D", "[", 
+    RowBox[{"pA3", ",", "CircleABC2"}], "]"}], ",", 
+   RowBox[{"IsOn2D", "[", 
+    RowBox[{"pB3", ",", "CircleABC2"}], "]"}], ",", 
+   RowBox[{"IsOn2D", "[", 
+    RowBox[{"pC3", ",", "CircleABC2"}], "]"}]}], "}"}]], "Input",
+ CellLabel->"In[19]:=",ExpressionUUID->"4cdf0fb4-5a06-4221-b0ba-b3900aa2857f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"True", ",", "True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8766619608156075`*^9, 3.876661986158117*^9}, 
+   3.8766621055270185`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"306a9e1d-e450-463c-a6f6-caf4aa777b32"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 409, 11, 48, "Input",ExpressionUUID->"5abe329f-a46a-4381-a9df-ec7f3d21865c"],
+Cell[970, 33, 455, 7, 28, "Input",ExpressionUUID->"7199449b-4535-4026-8930-3853e8bca3ca"],
+Cell[CellGroupData[{
+Cell[1450, 44, 15354, 348, 1663, "Input",ExpressionUUID->"28f6e8c8-ebb8-4016-957d-177d46137639"],
+Cell[16807, 394, 382, 9, 23, "Message",ExpressionUUID->"1c6ccd43-15a1-4446-8c2f-1c35e1906eb5"],
+Cell[17192, 405, 365, 9, 368, "Output",ExpressionUUID->"a9970292-9f27-46e5-8f65-66eeec591299"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17594, 419, 371, 9, 28, "Input",ExpressionUUID->"4cdf0fb4-5a06-4221-b0ba-b3900aa2857f"],
+Cell[17968, 430, 267, 5, 65, "Output",ExpressionUUID->"306a9e1d-e450-463c-a6f6-caf4aa777b32"]
+}, Open  ]]
+}
+]
+*)
+

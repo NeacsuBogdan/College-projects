@@ -1,0 +1,18 @@
+<body>
+  <div class="container">
+      <div class="card" *ngFor="let item of content">
+          <div class="face face1">
+              <div class="content">
+                  <img src="{{item.src}}">
+                  <h3>{{item.name}}</h3>
+              </div>
+          </div>
+          <div class="face face2">
+              <div class="content">
+                  <p>{{item.text}}</p>
+                      <a href="https://github.com/cstAcademy/UTC2022">Read More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>

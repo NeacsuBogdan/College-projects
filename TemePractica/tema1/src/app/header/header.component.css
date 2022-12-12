@@ -1,0 +1,70 @@
+.header {
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(124deg, rgba(2,84,10,1) 0%, rgba(8,190,38,1) 100%);
+    color: white;
+    font-size: 30px;
+  }
+  .header #right{
+  text-align: right;
+  }
+
+  img{
+    width: 300px;
+    height: auto;
+  }
+
+  h1{
+    font-family: Arial;
+    font-weight: bold;
+    }
+
+  p{
+    font-size:large;
+  }
+  .mbutton {
+    align-items: center;
+    background-image: linear-gradient(144deg,#e45700, #ff7d41 50%,#ea6303);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(252, 14, 14, 0.696) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 80px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    margin:15px;
+  }
+  
+  .mbutton:active,
+  .mbutton:hover {
+    outline: 0;
+  }
+  
+  .mbutton span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .mbutton:hover span {
+    background: none;
+    color: black;
+  }
+
+

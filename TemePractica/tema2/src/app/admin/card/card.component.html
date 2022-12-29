@@ -1,0 +1,12 @@
+<nz-card style="width:300px;" [nzTitle]="mod.id" [nzExtra]="extraTemplate">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  </nz-card>
+  <ng-template #extraTemplate>
+    <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+  </ng-template>
+
+    <nz-modal [(nzVisible)]="isVisible" [nzTitle]="mod.title" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <ng-container *nzModalContent>
+        <p>{{mod.description}}</p>
+      </ng-container>
+    </nz-modal>

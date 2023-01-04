@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div>
+    <input type="text"
+    #box
+      placeholder="Filter by name" 
+      style="width: 450px; padding: 2px 20px; margin: 10px 0px;height: 30px;">
+  </div>
+  <button (click)="getValue(box.value)">Filter</button>
+  <button (click)="sortUser()">Sort</button>
+  <table id="student" (mousemove)="onMouseMove()">
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Grade</th>
+    </tr>
+      <tr *ngFor="let std of filteredStudents">
+        <td>{{std.name}}</td>
+        <td>{{std.course}}</td>
+        <td>{{std.grade}}</td>
+      </tr>
+  </table>
+</div>

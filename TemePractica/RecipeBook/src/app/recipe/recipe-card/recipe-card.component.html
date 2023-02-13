@@ -1,0 +1,7 @@
+<div class="recipe-card">
+  <h3>{{ recipe.name }}</h3>
+  <p>Author: {{ recipe.author }}</p>
+  <button (click)="showInstructions()">Details</button>
+  <button class="delete-button" (click)="deleteRecipe(recipe)">&times;</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

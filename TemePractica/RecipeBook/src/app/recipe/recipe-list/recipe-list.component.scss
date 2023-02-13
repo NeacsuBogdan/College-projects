@@ -1,0 +1,32 @@
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+    }
+    
+    app-recipe-card {
+    margin: 10px;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        }
+        
+        .item {
+        text-align: center;
+        margin: 0 20px;
+        }
+        
+        .item p {
+        font-weight: bold;
+        margin-bottom: 5px;
+        }
+        
+        .filter-select {
+        width: 200px;
+        }
+        
+        

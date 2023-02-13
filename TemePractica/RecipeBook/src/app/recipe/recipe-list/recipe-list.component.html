@@ -1,0 +1,26 @@
+<app-home></app-home>
+
+<div class="container">
+  <div class="item">
+    <p>Adauga reteta:</p>
+    <button class="btn btn-primary" (click)="openModal()">Adauga reteta</button>
+  </div>
+  <div class="item">
+    <p>Sorteaza dupa:</p>
+    <select [(ngModel)]="selectedOption" (change)="sortRecipes()">
+      <option value="">None</option>
+      <option value="author">Author</option>
+      <option value="name">Name</option>
+      <option value="ingredients">Ingredients</option>
+      <option value="instructions">Instructions</option>
+      <option value="time">Time</option>
+    </select>
+  </div>
+  <div class="item">
+    <p>Cauta reteta:</p>
+    <input [(ngModel)]="searchTerm" (keyup)="searchRecipes()" (keydown)="searchRecipes()" type="text" placeholder="Search...">
+  </div>
+</div>
+<div class="recipe-list">
+    <app-recipe-card *ngFor="let recipe of recipes" [recipe]="recipe" (delete)="removeRecipe($event)"></app-recipe-card>
+  </div>

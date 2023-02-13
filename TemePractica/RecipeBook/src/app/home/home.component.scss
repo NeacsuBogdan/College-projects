@@ -1,0 +1,23 @@
+header nav ul {
+    background-color: #ff9f1a;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+  }
+  
+  
+  header nav ul li {
+    margin-left: 5px;
+  }
+  
+  button[nz-button] {
+    background-color: black;
+    color: #ff9f1a;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 3px;
+    cursor: pointer;
+    font-weight: bold;
+  }

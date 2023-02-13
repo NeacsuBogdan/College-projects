@@ -1,0 +1,10 @@
+<div class="modal-header"></div>
+    <div class="modal-body">
+      <h4>Ingredients:</h4>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+      </ul>
+      <h4>Instructions:</h4>
+      <p>{{ recipe.instructions }}</p>
+      <p>Time: {{ recipe.time }} minutes</p>
+    </div>

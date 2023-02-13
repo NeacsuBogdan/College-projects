@@ -1,0 +1,84 @@
+.recipe-card {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    }
+    
+
+    .recipe-card h3,
+    .recipe-card p {
+    color: white;
+    }
+    
+    .recipe-card button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    }
+
+    .delete-button {
+        background-color: red !important;
+        border: none;
+        color: white !important;
+        cursor: pointer;
+        float: right;
+        font-size: 1.5em;
+        }
+
+        
+
+
+.recipe-card ul {
+list-style: none;
+margin: 0;
+padding: 0;
+text-align: left;
+color: white;
+}
+
+
+.recipe-card button:hover {
+background-color: red;
+color: white;
+}
+
+
+.recipe-card .instructions {
+display: none;
+text-align: center;
+color: white;
+}
+
+.recipe-card .instructions.show {
+display: block;
+text-align: center;
+color: white;
+}
+
+@keyframes pulse {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.1);
+    }
+    100% {
+    transform: scale(1);
+    }
+    }
+    
+    .recipe-card:hover {
+    animation: pulse 2s infinite;
+    }

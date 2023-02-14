@@ -1,0 +1,4 @@
+Matematica 30
+Fizica 30
+Informatica 25
+Statistica 15

@@ -1,0 +1,3 @@
+Neacsu Bogdan,oldbogdan38@gmail.com,SCKv+gIlE3G/+BJ2N32jzLngYmIkhkV7vVRC7QEyOUo=,Profesor,0
+Neacsu Florin,oldbogdan@gmail.com,SCKv+gIlE3G/+BJ2N32jzLngYmIkhkV7vVRC7QEyOUo=,Student,1
+Zalaru Luiza,luiza@gmail.com,Zbscwv1f7d6pjh2ePsifrio/UO1C1vuWli74zQ4s/Lc=,Profesor,2

@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\bogdan\\Desktop\\INFO3\\Dezvoltarea aplicatiilor web\\PROIECT\\AspNetCoreApp\\AspNetCoreApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\bogdan\\Desktop\\INFO3\\Dezvoltarea aplicatiilor web\\PROIECT\\AspNetCoreApp\\AspNetCoreApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\bogdan\\Desktop\\INFO3\\Dezvoltarea aplicatiilor web\\PROIECT\\AspNetCoreApp\\AspNetCoreApp.csproj",
+        "projectName": "AspNetCoreApp",
+        "projectPath": "C:\\Users\\bogdan\\Desktop\\INFO3\\Dezvoltarea aplicatiilor web\\PROIECT\\AspNetCoreApp\\AspNetCoreApp.csproj",
+        "packagesPath": "C:\\Users\\bogdan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bogdan\\Desktop\\INFO3\\Dezvoltarea aplicatiilor web\\PROIECT\\AspNetCoreApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\bogdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://system.data.sqlite.org/downloads/1.0.117.0/sqlite-netFx-source-1.0.117.0.zip": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

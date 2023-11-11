@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  doodletech-app:
+    image: aspnetcore-app:tag
+    ports:
+      - "8081:80"
+    networks:
+      - custom_bridge
+    environment:
+      - DatabaseConnectionString=Server=DoodleTechBD,2433;User Id=sa;Password=DoodleTech.23;
+
+networks:
+  custom_bridge:
+    external: true

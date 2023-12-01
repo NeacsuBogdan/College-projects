@@ -1,3 +1,0 @@
-#Ignore .NET Core build artifacts
-bin/
-obj/

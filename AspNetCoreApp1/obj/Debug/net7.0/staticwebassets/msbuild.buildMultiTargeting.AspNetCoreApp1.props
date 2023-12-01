@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\AspNetCoreApp1.props" />
-</Project>
